@@ -7,4 +7,7 @@ class Player:
 
 # print(Player)
 player = Player()
-print(f"{player.name} berhasil dibuat")
+print(f"nama {player.name} berhasil dibuat")
+
+player.name = "vivy cahyani"
+print(f"{player.name} dalah nama baru")
