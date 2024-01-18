@@ -8,8 +8,12 @@ class Player:
     def attack(self, damage = 1):
         self.energy -= damage  # self.energy = self.emergy - damage
         print("attacking!")
-player = Player()
-player.attack()
-player.attack(damage=34)
+class Monster:
+    def __init__(self, health):
+        self.health = health
+        print("Monster Created")
 
-print(player.__dict__)
+player = Player()
+monster = Monster(health=1000)
+print(monster.__dict__)
+
