@@ -8,7 +8,7 @@ class Player:
     def attack(self, monster, damage = 1 ):
         monster.health -= damage
         self.energy -= damage  # self.energy = self.emergy - damage
-        print("attacking!")
+        print(f"attacking to monster, monster health {monster.health} left")
 class Monster:
     def __init__(self, health):
         self.health = health
