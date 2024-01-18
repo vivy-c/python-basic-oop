@@ -5,7 +5,8 @@ class Player:
         self.energy = energy
         print(f"player created")
 
-    def attack(self, damage = 1):
+    def attack(self, monster, damage = 1 ):
+        self.target = monster.health
         self.energy -= damage  # self.energy = self.emergy - damage
         print("attacking!")
 class Monster:
@@ -15,5 +16,6 @@ class Monster:
 
 player = Player()
 monster = Monster(health=1000)
+player.attack( monster,damage=80 )
 print(monster.__dict__)
 
