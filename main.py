@@ -7,15 +7,24 @@ class Player:
     def attack(self, target, damage = 1 ):
         target.health -= damage
         self.energy -= damage  # self.energy = self.emergy - damage
-        print(f"attacking to monster, target health {target.health} left")
+        print(f"monster health {target.health} left, your energy : {self.energy} left")
 class Monster:
-    def __init__(self, health):
-        self.health = health
+    def __init__(self, health = 200):
+        self.health = health # dinamis
+        self.health_init = self.health
+
+    def attack(self):
+        if self.health < self.health_init:
+            print("siap serang balik")
+        else :
+            print("tidur")
 
 player1 = Player()
 player2 = Player()
 
-dragon = Monster(health=1000)
-player1.attack( target=dragon,damage=80 )
-player2.attack( target=dragon,damage=80 )
+dragon = Monster(health=500)
+player1.attack( target=dragon,damage=20 )
+player2.attack( target=dragon,damage=30 )
+
+dragon.attack()
 
