@@ -9,8 +9,11 @@ class Player:
         self.energy -= damage  # self.energy = self.emergy - damage
         if target.is_attacked():
             self.health -= target.damage
+        print("player attacking monster")
 
-        print(f"monster health {target.health} left, your energy : {self.energy} left")
+    def show_info(self):
+        print(f"player health : {self.health}")
+        print(f"player energy : {self.energy}")
 class Monster:
     def __init__(self, health = 200):
         self.health = health # dinamis
@@ -20,11 +23,16 @@ class Monster:
     def is_attacked(self):
         return self.health < self.health_init
 
+    def show_info(self):
+        print(f"monster health {self.health} left")
+
 player1 = Player()
 player2 = Player()
 
 dragon = Monster(health=500)
 player1.attack( target=dragon,damage=20 )
-player2.attack( target=dragon,damage=30 )
+# player2.attack( target=dragon,damage=30 )
 
+player1.show_info()
+dragon.show_info()
 
